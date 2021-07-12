@@ -1,0 +1,20 @@
+apiVersion: skaffold/v2beta18
+kind: Config
+metadata:
+  name: k8s-demo
+build:
+  artifacts:
+  - image: k8s-demo/greeting
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  helm:
+    releases:
+    - name: greeting
+      chartPath: helm
+      artifactOverrides:
+        containerImage: k8s-demo/greeting
+      imageStrategy:
+        fqn: {}
+  logs:
+    prefix: podAndContainer

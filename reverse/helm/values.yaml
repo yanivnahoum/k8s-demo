@@ -1,0 +1,3 @@
+app:
+  name: "reverse"
+containerImage: k8s-demo/reverse:1.0.0

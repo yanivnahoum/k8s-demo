@@ -1,0 +1,4 @@
+app:
+  name: "greeting"
+replicas: 2
+containerImage: k8s-demo/greeting:1.0.0

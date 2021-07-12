@@ -1,0 +1,14 @@
+reverse:
+  base-url: http://localhost:8090
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+logging:
+  level:
+    root: info
+    org.springframework.web.filter.CommonsRequestLoggingFilter: debug
+
