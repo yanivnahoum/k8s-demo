@@ -14,7 +14,8 @@ public class GreetingController {
     private final ReverseClient reverseClient;
 
     @GetMapping("hello")
-    String sayHello(@RequestParam(defaultValue = "k8s") String name, @RequestParam(defaultValue = "false") boolean reversed) {
+    String sayHello(@RequestParam(defaultValue = "k8s") String name,
+                    @RequestParam(defaultValue = "false") boolean reversed) {
         var greeting = "Hello " + name;
         return reversed ? reverseClient.reverse(greeting) : greeting;
     }
