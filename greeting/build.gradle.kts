@@ -15,6 +15,7 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
@@ -24,6 +25,8 @@ tasks {
             release.set(11)
             compilerArgs.add("-Xlint:all,-processing,-auxiliaryclass")
         }
+        // For additional-spring-configuration-metadata.json
+        inputs.files(processResources)
     }
 
     jar {
