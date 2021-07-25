@@ -57,7 +57,7 @@ to the service name when we're not inside a pod that belongs to a specific names
 
 ### [Intercept](https://www.telepresence.io/docs/latest/reference/intercepts/)
 * Run `telepresence intercept reverse --port 8090 --env-file=./reverse.env`
-* Run reverse app locally on port 8090 (configure the app with the EnvFile plugin to pick up ./reverse.env)
+* Run reverse app locally on port 8090 (configure the app with the [Intellij EnvFile plugin](https://plugins.jetbrains.com/plugin/7861-envfile) to pick up ./reverse.env)
 * Now we don't need to qualify the service name with the namespace: `curl http://reverse-service/reverse/hello`
 * Browse http://localhost:8088/greet/hello?name=Yaniv&reversed=true
 * Edit [ReverseController](reverse/src/main/java/com/att/training/k8s/reverse/ReverseController.java): add `.append("***")`
