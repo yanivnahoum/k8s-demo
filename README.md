@@ -20,7 +20,7 @@ Mocking or replicating cloud services or managed services in your local environm
 ### Debug
 * Use debug flag & reduce # of replicas to 1: [greeting] `helm upgrade --install greeting ./helm --set replicas=1 --set debug=true`
 * Run `kubectl rollout status deployment greeting`
-* port-forward local port 5005 to pod's 5005: `kubectl greeting-<pod-hash> 5005`
+* port-forward local port 5005 to pod's 5005: `kubectl port-forward greeting-<pod-hash> 5005`
 * Launch debugger and put a breakpoint in the [GreetingController](greeting/src/main/java/com/att/training/k8s/greeting/GreetingController.java), and hit http://localhost:8088/greet/hello
 * Clean up: revert replicas and debug: `helm upgrade --install --reset-values greeting ./helm`
 
