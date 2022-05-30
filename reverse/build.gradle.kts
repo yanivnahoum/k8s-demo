@@ -1,6 +1,6 @@
 plugins {
     java
-    id("org.springframework.boot") version "2.5.3"
+    id("org.springframework.boot") version "2.7.0"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
 }
 
@@ -20,7 +20,7 @@ dependencies {
 tasks {
     withType<JavaCompile>().configureEach {
         with(options) {
-            release.set(11)
+            release.set(17)
             compilerArgs.add("-Xlint:all,-processing,-auxiliaryclass")
         }
     }

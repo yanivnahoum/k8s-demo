@@ -1,8 +1,8 @@
 plugins {
     java
-    id("org.springframework.boot") version "2.5.3"
+    id("org.springframework.boot") version "2.7.0"
         id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    id("io.freefair.lombok") version "5.3.3.3"
+    id("io.freefair.lombok") version "6.4.3"
 }
 
 group = "com.att.training.k8s.greeting"
@@ -22,7 +22,7 @@ dependencies {
 tasks {
     withType<JavaCompile>().configureEach {
         with(options) {
-            release.set(11)
+            release.set(17)
             compilerArgs.add("-Xlint:all,-processing,-auxiliaryclass")
         }
         // For additional-spring-configuration-metadata.json
@@ -31,10 +31,6 @@ tasks {
 
     jar {
         enabled = false
-    }
-
-    generateLombokConfig {
-        isEnabled = true
     }
 
     test {
